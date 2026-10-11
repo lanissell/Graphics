@@ -1,0 +1,28 @@
+* text=auto
+
+# Visual Studio and PowerShell files keep Windows line endings
+*.sln      text eol=crlf
+*.vcxproj  text eol=crlf
+*.filters  text eol=crlf
+*.props    text eol=crlf
+*.targets  text eol=crlf
+*.ps1      text eol=crlf
+
+*.lib   binary
+*.dll   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.bmp   binary
+*.tga   binary
+*.hdr   binary
+*.pdf   binary
+
+# Kept in the repository, but left out of a submission archive (tools/pack.ps1, git archive)
+/tools/**       export-ignore
+/.claude/**     export-ignore
+CLAUDE.md       export-ignore
+AGENTS.md       export-ignore
+.gitignore      export-ignore
+.gitattributes  export-ignore
+.gitkeep        export-ignore

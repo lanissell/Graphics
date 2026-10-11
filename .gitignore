@@ -1,0 +1,80 @@
+# Build output of this solution
+/build/
+
+# Assignment texts
+/docs/
+*.docx
+
+# Submission archives
+/dist/
+*.zip
+*.rar
+*.7z
+
+# Visual Studio state and caches
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.opendb
+*.sdf
+*.opensdf
+*.ncb
+*.aps
+ipch/
+
+# Default Visual Studio output folders, in case a project does not redirect to /build/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww]in32/
+[Aa][Rr][Mm]64/
+
+# Compiler, linker and debugger artifacts
+*.obj
+*.o
+*.pch
+*.ipch
+*.ilk
+*.pdb
+*.idb
+*.exp
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
+*.log
+*.exe
+*.dmp
+
+# Profiling and analysis
+*.psess
+*.vsp
+*.vspx
+*.diagsession
+*.sarif
+
+# Other editors
+.idea/
+.vscode/
+cmake-build-*/
+*.swp
+*~
+
+# Graphics debugger captures
+*.rdc
+*.vsglog
+
+# Operating system
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Office lock files
+~$*
