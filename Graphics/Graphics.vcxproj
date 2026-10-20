@@ -16,14 +16,12 @@
     <ProjectGuid>{C58E8936-84A8-41FB-BF5A-AF55E9ACFDBF}</ProjectGuid>
     <RootNamespace>Graphics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <!-- Always hand the build over to MSBuild so that edited shaders and textures are copied next to the executable. -->
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <!-- Uses the toolset of the installed Visual Studio, so the project opens without retargeting. -->
     <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -61,7 +59,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ExternalDir)glfw\include;$(ExternalDir)glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ExternalDir)glfw\include;$(ExternalDir)glew\include;$(ExternalDir)stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -87,12 +85,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\helpers\Shader.cpp" />
+    <ClCompile Include="src\helpers\Texture.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\stb_image.cpp" />
+    <ClCompile Include="src\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\helpers\Shader.h" />
+    <ClInclude Include="src\helpers\Texture.h" />
+    <ClInclude Include="src\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\shaders\textured.frag" />
+    <None Include="resources\shaders\textured.vert" />
+    <None Include="resources\textures\container.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  <!-- Puts the runtime libraries and the resources folder next to the executable, so it also starts outside of Visual Studio. -->
   <Target Name="CopyRuntimeFiles" AfterTargets="Build">
     <ItemGroup>
       <RuntimeLibrary Include="$(ExternalDir)glfw\bin\glfw3.dll;$(ExternalDir)glew\bin\glew32.dll" />
