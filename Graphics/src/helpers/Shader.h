@@ -9,6 +9,7 @@ public:
 
     void Init(const char* vertexPath, const char* fragmentPath);
     void Use();
+    void BindUniformBlock(const char* name, GLuint binding);
 
 private:
     GLuint program = 0;

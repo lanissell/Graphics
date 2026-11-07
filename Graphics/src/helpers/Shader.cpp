@@ -46,3 +46,8 @@ void Shader::Use()
 {
     glUseProgram(program);
 }
+
+void Shader::BindUniformBlock(const char* name, GLuint binding)
+{
+    glUniformBlockBinding(program, glGetUniformBlockIndex(program, name), binding);
+}
